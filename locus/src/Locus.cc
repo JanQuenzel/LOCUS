@@ -5,9 +5,12 @@ Authors:
 */
 
 #include <locus/Locus.h>
+#include <fstream>
 
 namespace pu = parameter_utils;
 namespace gu = geometry_utils;
+
+std::shared_ptr<std::ofstream> posesFile = nullptr;
 
 // Constructor/destructor
 // --------------------------------------------------------
@@ -39,7 +42,9 @@ Locus::Locus()
   double_param.value = 0.25;
 }
 
-Locus::~Locus() {}
+Locus::~Locus() {
+    if ( posesFile ) { posesFile->close(); }
+}
 
 // Spinners/subscribers
 // ----------------------------------------------------------
@@ -665,6 +670,14 @@ void Locus::PublishOdometry(const geometry_utils::Transform3& odometry,
     size_t col = i % 6;
     odometry_msg.pose.covariance[i] = covariance(row, col);
   }
+  if ( ! posesFile  ) posesFile = std::make_shared<std::ofstream>("./locus_after_map_poses.txt");
+  // write to file:
+  if ( posesFile && posesFile->is_open() )
+  {
+      (*posesFile) << (odometry_msg.header.stamp.toNSec()) << " " << odometry_msg.pose.pose.position.x << " " << odometry_msg.pose.pose.position.y << " " << odometry_msg.pose.pose.position.z
+                   << " " << odometry_msg.pose.pose.orientation.x << " " << odometry_msg.pose.pose.orientation.y << " " << odometry_msg.pose.pose.orientation.z << " " << odometry_msg.pose.pose.orientation.w <<"\n";
+  }
+
   odometry_pub_.publish(odometry_msg);
 }
 

@@ -1,7 +1,7 @@
 session_name: I_Spot1_Tunnel_run
 
 environment:
-  DATA_PATH: /home/costar/data/12_Spot1_Loop_Kentucky
+  DATA_PATH: /home/drz/eval_bags/NebulaSubT/I/
   DATA_FOLDER: rosbag/
   RUN_NUMBER: "test"
   LOG_VERSION: '2'
@@ -53,7 +53,7 @@ windows:
       fi;
 
     # launch rviz
-    - rviz -d $(rospack find locus)/rviz/$(echo $ROBOT_NAME)_locus.rviz
+    # - rviz -d $(rospack find locus)/rviz/$(echo $ROBOT_NAME)_locus.rviz
 
     # Front-end
     - if [ $ROBOT_TYPE = 'husky' ]; then
@@ -107,6 +107,6 @@ windows:
 
     ################################ END RECORDING ###############################
     # Uncomment the line below to automatically end the run
-    # - sleep $TIME_TO_END; rosnode kill -a 
+    - sleep $TIME_TO_END; rosnode kill -a 
     # Use the line below to prepare a kill command when you want to stop
-    - rosnode kill -a \
+    #- rosnode kill -a \
