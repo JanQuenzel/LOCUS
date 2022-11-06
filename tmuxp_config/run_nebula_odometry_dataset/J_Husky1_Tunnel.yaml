@@ -1,7 +1,7 @@
 session_name: J_Husky1_Tunnel
 
 environment:
-  DATA_PATH: /home/drz/eval_bags/NebulaSubT/I/ 
+  DATA_PATH: /home/drz/eval_bags/NebulaSubT/J/ 
   DATA_FOLDER: rosbag/
   RUN_NUMBER: "test"
   LOG_VERSION: '2'
@@ -25,6 +25,7 @@ windows:
   focus: true
   layout: tiled
   shell_command_before:
+    - source ~/lidar_ws/devel/setup.bash
     - rosparam set /use_sim_time true
     # Set up the parameter files from the GT products
     - cp $DATA_PATH/fiducial_calibration_$ROBOT_NAME.yaml ~/.ros/
@@ -70,6 +71,7 @@ windows:
   focus: false
   layout: tiled
   shell_command_before:
+    - source ~/lidar_ws/devel/setup.bash
     - rosparam set /use_sim_time true
 
   panes:
@@ -85,6 +87,7 @@ windows:
   focus: false
   layout: tiled
   shell_command_before:
+    - source ~/lidar_ws/devel/setup.bash
     - mkdir $DATA_PATH/locus_$RUN_NUMBER
     - rosparam set /use_sim_time true
 
