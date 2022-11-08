@@ -1,18 +1,18 @@
-session_name: K_Spot1_Mix_run
+session_name: O_Husky1_Mix_run
 
 environment:
-  DATA_PATH: /home/drz/eval_bags/NebulaSubT/K/
+  DATA_PATH: /home/drz/eval_bags/NebulaSubT/O/
   DATA_FOLDER: rosbag/
   RUN_NUMBER: "test"
   LOG_VERSION: '2'
   NUM_VLP: '3'
-  ROBOT_NAME: spot1
-  ROBOT_TYPE: spot
+  ROBOT_NAME: husky1
+  ROBOT_TYPE: husky
   BASE_NAME: base1
-  START: '600'
+  START: '0'
   RATE: '1'
-  TIME_TO_END: '1800'
-  TIME_TO_MAP_SAVE: '1900'
+  TIME_TO_END: '2560'
+  TIME_TO_MAP_SAVE: '2550'
   ODOM: locus/odometry
 
 options:
@@ -105,7 +105,6 @@ windows:
     - rosbag record -O $DATA_PATH/locus_$RUN_NUMBER/lidar_callback_duration.bag /$ROBOT_NAME/locus/lidar_callback_duration
     - rosbag record -O $DATA_PATH/locus_$RUN_NUMBER/scan_to_scan_duration.bag /$ROBOT_NAME/locus/scan_to_scan_duration
     - rosbag record -O $DATA_PATH/locus_$RUN_NUMBER/scan_to_map_duration.bag /$ROBOT_NAME/locus/scan_to_submap_duration
-
 
     ################################ END RECORDING ###############################
     # Uncomment the line below to automatically end the run

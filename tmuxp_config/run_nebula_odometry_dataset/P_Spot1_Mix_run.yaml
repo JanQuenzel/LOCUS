@@ -1,13 +1,13 @@
-session_name: P_Husky1_Mix_run
+session_name: P_Spot1_Mix_run
 
 environment:
   DATA_PATH: /home/drz/eval_bags/NebulaSubT/P/
   DATA_FOLDER: rosbag/
   RUN_NUMBER: "test"
   LOG_VERSION: '2'
-  NUM_VLP: '3'
-  ROBOT_NAME: husky1
-  ROBOT_TYPE: husky
+  NUM_VLP: '1'
+  ROBOT_NAME: spot1
+  ROBOT_TYPE: spot
   BASE_NAME: base1
   START: '280'
   RATE: '1'
@@ -53,7 +53,7 @@ windows:
       fi;
 
     # launch rviz
-    - rviz -d $(rospack find locus)/rviz/$(echo $ROBOT_NAME)_locus.rviz
+    #- rviz -d $(rospack find locus)/rviz/$(echo $ROBOT_NAME)_locus.rviz
 
     # Front-end
     - if [ $ROBOT_TYPE = 'husky' ]; then
