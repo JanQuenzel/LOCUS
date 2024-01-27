@@ -1,3 +1,16 @@
+respeaker:
+  name: respeaker
+  parent: base_link
+  topic_name: audio
+  position:
+    x: 0
+    y: 0
+    z: 0.2
+  orientation:
+    r: 0
+    p: 0
+    y: 0
+  rate: 1
 realsense:
   name: camera_front
   parent: base_link

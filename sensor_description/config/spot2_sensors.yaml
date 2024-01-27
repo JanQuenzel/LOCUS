@@ -1,3 +1,16 @@
+respeaker:
+  name: respeaker
+  parent: base_link
+  topic_name: audio
+  position:
+    x: 0
+    y: 0
+    z: 0.2
+  orientation:
+    r: 0
+    p: 0
+    y: 0
+  rate: 1
 realsense:
   name: camera_front
   parent: base_link
@@ -34,30 +47,6 @@ realsense_right:
     p: 0
     y: ${-pi/2}
   rate: 10
-realsense_rear:
-  name: camera_rear
-  parent: base_link
-  position:
-    x: -0.353
-    y: 0
-    z: 0.145
-  orientation:
-    r: 0
-    p: 0
-    y: ${pi}
-  rate: 10
-realsense_up:
-  name: camera_up
-  parent: base_link
-  position:
-    x: -0.325
-    y: 0
-    z: 0.165
-  orientation:
-    r: 0
-    p: ${-pi/2}
-    y: 0
-  rate: 10
 boson:
   name: boson
   parent: base_link
@@ -76,10 +65,10 @@ velodyne:
   position:
     x: 0.290
     y: 0
-    z: 0.330
+    z: 0.343
   orientation:
-    r: -0.005
-    p: 0.020
+    r: 0
+    p: 0
     y: 0
   rate: 10
   topic_name: velodyne_points
@@ -96,19 +85,6 @@ vn100:
     p: 0
     y: 0
   rate: 50
-respeaker:
-  name: respeaker
-  parent: velodyne_base_link
-  topic_name: audio
-  position:
-    x: 0
-    y: 0
-    z: 0.08
-  orientation:
-    r: 0
-    p: 0
-    y: 0.78
-  rate: 1
 
 # TODO: The realsense calibration values are copied form spot1. Need to change
 realsense_builtin_frontleft:
@@ -171,3 +147,4 @@ realsense_builtin_rear:
     p: 0.008325343013676725
     y: 1.5740796315774026
   rate: 1
+
