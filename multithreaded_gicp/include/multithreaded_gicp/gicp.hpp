@@ -38,7 +38,7 @@
  *
  */
 #ifndef IMPL_MULTITHREADED_GICP_HPP_
-#define IMPL_MULTITHREADEd_GICP_HPP_
+#define IMPL_MULTITHREADED_GICP_HPP_
 
 #include <algorithm>
 #include <chrono>

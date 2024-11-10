@@ -48,6 +48,7 @@
 #include <geometry_utils/Transform3.h>
 #include <multithreaded_gicp/gicp.h>
 #include <multithreaded_ndt/ndt_omp.h>
+#include <atomic>
 #include <mutex>
 #include <nav_msgs/Odometry.h>
 #include <parameter_utils/ParameterUtils.h>

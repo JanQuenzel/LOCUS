@@ -4,7 +4,7 @@ project(point_cloud_localization)
 if(NOT CMAKE_BUILD_TYPE)
   set(CMAKE_BUILD_TYPE Release)
 endif()
-
+add_compile_options(-std=c++14)
 #SET(CMAKE_BUILD_TYPE Release)
 
 find_package(PCL 1.7 REQUIRED COMPONENTS common registration)
